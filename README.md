@@ -74,7 +74,7 @@ ws://185.177.105.151:1998?_=0013bbbcf2f21b30709ea4c186...
         - like_is_liked = -1 // negative 👎
         - like_is_liked = 0  // neutral 😶
         - like_is_liked = 1  // positive 👍
-        
+
 - - - 
 
 
@@ -210,6 +210,15 @@ Query Parameters:
     - 3 - Public Group(OneToMany)
 ```log
 Method: GET  | Url: http://185.177.105.151:1998/api/rooms/list?type=1
+```
+- - - 
+
+#### # Make this request to subscribe a global public room.
+This is a request to subscribe to a global room to receive action notifications.
+Parameters:
++ **room_id** - Required/Number.
+```log
+Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_id/subscribe
 ```
 - - - 
 
