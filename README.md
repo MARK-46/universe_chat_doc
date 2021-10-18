@@ -192,7 +192,7 @@ class SignalerSocketClient() {
 - - - 
 
 # HTTP APIs
-###### PostmanCollection: [Download](https://github.com/MARK-46/universe_chat/blob/main/%23CHAT.postman_collection.json)
+###### PostmanCollection: [Download](https://raw.githubusercontent.com/MARK-46/universe_chat_doc/main/%23CHAT.postman_collection.json)
 
 For make request you need to add three headers.
 ```log
