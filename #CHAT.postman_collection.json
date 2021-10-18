@@ -1,0 +1,774 @@
+{
+	"info": {
+		"_postman_id": "b87ff745-9c05-4ed8-a12c-0709a34ae723",
+		"name": "#CHAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Room list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/list",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room join",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/1/join",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"join"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room leave",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/20/leave",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"20",
+								"leave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room subscribe",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/2/subscribe",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"2",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room member list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/2/members/list",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"2",
+								"members",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "room_name",
+									"value": "Test Room",
+									"type": "text"
+								},
+								{
+									"key": "room_type",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "room_owner[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "room_member[0]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "room_member[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "room_member[2]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "room_image",
+									"value": "https://newslanded.com/wp-content/uploads/2020/05/5e3dcb7bdf2f6619830b7162.jpeg",
+									"type": "text"
+								},
+								{
+									"key": "room_image",
+									"type": "file",
+									"src": "/C:/Users/Mark/Downloads/10357-chat-typing-indicator.gif",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/create",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "room_name",
+									"value": "Test Room Updated",
+									"type": "text"
+								},
+								{
+									"key": "room_type",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "room_owner[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "room_member[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "room_member[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "room_member[2]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "room_image",
+									"value": "https://newslanded.com/wp-content/uploads/2020/05/5e3dcb7bdf2f6619830b7162.jpeg",
+									"type": "text"
+								},
+								{
+									"key": "room_image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/24/update",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"24",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Room delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/1/delete",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Message list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/1/messages/list?skip=0&limit=10",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"messages",
+								"list"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message send",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message_type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "message_content",
+									"value": "Hello World :D",
+									"type": "text"
+								},
+								{
+									"key": "message_replies[0]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "message_mention_options",
+									"value": "[{\"test\": \"text\"}]",
+									"type": "text"
+								},
+								{
+									"key": "message_files[0]",
+									"type": "file",
+									"src": "/C:/Users/Mark/Downloads/animation_200_kufh0fbd.gif"
+								},
+								{
+									"key": "message_files[1]",
+									"type": "file",
+									"src": "/C:/Users/Mark/Downloads/notification-d89df-firebase-adminsdk-4frn8-a640f947bd.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/1/messages/send",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"messages",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message_type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "message_content",
+									"value": "Hello World :D1",
+									"type": "text"
+								},
+								{
+									"key": "message_replies[0]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "message_mention_options",
+									"value": "[{\"test\": \"text\"}]",
+									"type": "text"
+								},
+								{
+									"key": "message_deleted_files[0]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "message_files[0]",
+									"type": "file",
+									"src": "/C:/Users/Mark/Downloads/animation_200_kufh0fbd.gif"
+								},
+								{
+									"key": "message_files[1]",
+									"type": "file",
+									"src": "/C:/Users/Mark/Downloads/10357-chat-typing-indicator.gif"
+								},
+								{
+									"key": "message_files[0]",
+									"value": "/mark46.png",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/1/messages/26/update",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"messages",
+								"26",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_ACCESS_TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "_",
+								"value": "{{USER_SOCKET_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{USER_UI_LANG}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/api/rooms/1/messages/9/delete",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"messages",
+								"9",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{USER_ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "_",
+						"value": "{{USER_SOCKET_ID}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "{{USER_UI_LANG}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{HOST}}:{{PORT}}/api/friends/list?joint_room_type=1",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"friends",
+						"list"
+					],
+					"query": [
+						{
+							"key": "joint_room_type",
+							"value": "1"
+						},
+						{
+							"key": "joint_room_type",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "joint_room_type",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "185.177.105.151"
+		},
+		{
+			"key": "PORT",
+			"value": "1998"
+		},
+		{
+			"key": "USER_ACCESS_TOKEN",
+			"value": "0013bbbcf2f21b30709ea4c1866ebefc0191279fbe8ba1623d9935ce9c60f4adf73b42d76c19ce66"
+		},
+		{
+			"key": "USER_SOCKET_ID",
+			"value": "ZkJbjUa6n3CgkuGXAAAB"
+		},
+		{
+			"key": "USER_UI_LANG",
+			"value": ""
+		}
+	]
+}
