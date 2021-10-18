@@ -1,3 +1,21 @@
++ [SocketIO](#socketio)
+    + [Server-side Events](#-server-side-events)
+    + [Client-side Emitter](#-client-side-emitter)
+    + [Example using in Kotlin](#-example-using-in-kotlin)
++ [HTTP APIs](#http-apis)
+    + [Get a list of available rooms.](#-get-a-list-of-available-rooms)
+    + [Make this request to subscribe a global public room.](#-make-this-request-to-subscribe-a-global-public-room)
+    + [Make this request to join a room.](#-make-this-request-to-join-a-room)
+    + [Make this request before joining a room to leave the previous room.](#-make-this-request-before-joining-a-room-to-leave-the-previous-room)
+    + [Get room members.](#-get-room-members)
+    + [Get room messages by parameters limit and skip.](#-get-room-messages-by-parameters-limit-and-skip)
+    + [Get a list of available users to create a room.](#-get-a-list-of-available-users-to-create-a-room)
+    + [To add a new or edit an existing room.](#-to-add-a-new-or-edit-an-existing-room-if-has-access)
+    + [To add a new or edit an existing message.](#-to-add-a-new-or-edit-an-existing-message-if-has-access)
+    + [To delete a room or room message.](#-to-delete-a-room-or-room-message-if-has-access)
+
+- - - 
+
 # SocketIO
 
 To connect to a socket server, you need to add the '_' parameter with the access_token value.
