@@ -13,9 +13,9 @@
     + [To add a new or edit an existing room.](#-to-add-a-new-or-edit-an-existing-room-if-has-access)
     + [To add a new or edit an existing message.](#-to-add-a-new-or-edit-an-existing-message-if-has-access)
     + [To delete a room or room message.](#-to-delete-a-room-or-room-message-if-has-access)
-+ [For PHP](#for-php)
-    + [To insert/update/delete a users.](#-to-insert-update-delete-a-users)
-    + [To insert/update/delete a rooms.](#-to-insert-update-delete-a-rooms)
++ [For PHP](#private-apis)
+    + [To insert/update/delete a users.](#-to-insertupdatedelete-a-users)
+    + [To insert/update/delete a rooms.](#-to-insertupdatedelete-a-rooms)
 - - - 
 
 # SocketIO
@@ -374,7 +374,7 @@ Headers:
 ```
 
 Exmple Body(insert users):
-```json
+```jsonc
     {
         "type": 1, // insert
         "users": [
@@ -391,7 +391,7 @@ Exmple Body(insert users):
     }
 ```
 Exmple Body(update users):
-```json
+```jsonc
     {
         "type": 2, // update
         "users": [
@@ -408,7 +408,7 @@ Exmple Body(update users):
     }
 ```
 Exmple Body(delete users):
-```json
+```jsonc
     {
         "type": 3, // for delete
         "users": [
@@ -430,7 +430,7 @@ Headers:
 ```
 
 Exmple Body:
-```json
+```jsonc
     {
         "type": 1, // 1 - insert / 2 - update / 3 - delete
         "rooms": [
