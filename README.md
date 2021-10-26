@@ -13,7 +13,9 @@
     + [To add a new or edit an existing room.](#-to-add-a-new-or-edit-an-existing-room-if-has-access)
     + [To add a new or edit an existing message.](#-to-add-a-new-or-edit-an-existing-message-if-has-access)
     + [To delete a room or room message.](#-to-delete-a-room-or-room-message-if-has-access)
-
++ [For PHP](#for-php)
+    + [To insert/update/delete a users.](#-to-insert-update-delete-a-users)
+    + [To insert/update/delete a rooms.](#-to-insert-update-delete-a-rooms)
 - - - 
 
 # SocketIO
@@ -358,4 +360,83 @@ Parameters:
 ```log
 Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/delete
 Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/messages/:message_id/delete
+```
+
+- - -
+
+# Private APIs
+#### # To insert/update/delete a users.
+
+```log
+Method: POST | Url: http://185.177.105.151:1998/api/update/:secret_key/users
+Headers:
+    Content-Type: application/json
+```
+
+Exmple Body(insert users):
+```json
+    {
+        "type": 1, // insert
+        "users": [
+            {
+                "user_id": 1159, // Required
+                "user_email": "user@email.com", // No Required
+                "user_device_token": "vf67g8h9mju...", // No Required
+                "user_role": 1, // Required
+                "user_username": "user123", // Required
+                "user_image": "http://domain/path/file.ext", // Required
+                "user_created_at": "2021-10-03 13:52:39", // Required
+            }
+        ]
+    }
+```
+Exmple Body(update users):
+```json
+    {
+        "type": 2, // update
+        "users": [
+            {
+                "user_id": 1159, // Required
+                "user_email": "user@email.com", // No Required
+                "user_device_token": "vf67g8h9mju...", // No Required
+                "user_role": 1, // Required
+                "user_username": "user123", // Required
+                "user_image": "http://domain/path/file.ext", // Required
+                "user_updated_at": "2021-10-03 13:52:39", // Required
+            }
+        ]
+    }
+```
+Exmple Body(delete users):
+```json
+    {
+        "type": 3, // for delete
+        "users": [
+            {
+                "user_id": 1159 // Required
+            }
+        ]
+    }
+```
+
+- - - 
+
+#### # To insert/update/delete a rooms.
+
+```log
+Method: POST | Url: http://185.177.105.151:1998/api/update/:secret_key/rooms
+Headers:
+    Content-Type: application/json
+```
+
+Exmple Body:
+```json
+    {
+        "type": 1, // 1 - insert / 2 - update / 3 - delete
+        "rooms": [
+            {
+                // data
+            }
+        ]
+    }
 ```
