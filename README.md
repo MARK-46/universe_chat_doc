@@ -220,6 +220,14 @@ For make request you need to add three headers.
 2) _: ZkJbjUa6n3CgkuGXAAAB                      # This is the ID of the socket client
 3) Accept-Language: EN                          # This is the response messages language
 ```
+
+###### Examples of room keys:
+    - PUBLIC_GROUP_5         = PUBLIC_GROUP_<ROOM_ID>
+    - PRIVATE_GROUP_5        = PRIVATE_GROUP_<ROOM_ID>
+    - PRIVATE_CHAT_1160_38   = PRIVATE_CHAT_<USER_ID_1>_<USER_ID_2>
+                                USER_ID_1 - This is your user_id
+                                USER_ID_2 - This is the user_id of your interlocutor
+
 - - - 
 
 #### # Get a list of available rooms.
@@ -236,45 +244,45 @@ Method: GET  | Url: http://185.177.105.151:1998/api/rooms/list?type=1
 #### # Make this request to subscribe a global public room.
 This is a request to subscribe to a global room to receive action notifications.
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 ```log
-Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_id/subscribe
+Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_key/subscribe
 ```
 - - - 
 
 #### # Make this request to join a room.
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 ```log
-Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_id/join
+Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_key/join
 ```
 - - - 
 
 #### # Make this request before joining a room to leave the previous room.
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 ```log
-Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_id/leave
+Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_key/leave
 ```
 - - - 
 
 #### # Get room members.
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 ```log
-Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_id/members/list
+Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_key/members/list
 ```
 - - - 
 
 #### # Get room messages by parameters limit and skip.
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 
 Query Parameters:
 + **limit** - No Required/Number. Used to specify the maximum number of results to be returned
 + **skip** - No Required/Number. Gets or sets the number of search results to skip.
 ```log
-Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_id/messages/list?limit=10&skip=0
+Method: GET  | Url: http://185.177.105.151:1998/api/rooms/:room_key/messages/list?limit=10&skip=0
 ```
 - - - 
 
@@ -293,7 +301,7 @@ Method: GET  | Url: http://185.177.105.151:1998/api/friends/list?joint_room_type
 
 #### # To add a new or edit an existing room (if has access).
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 
 FormData Fields:
 + **room_name** - Required/String.
@@ -306,7 +314,7 @@ FormData Fields:
 + **room_member[0]** - Required/MultipleNumber. User ID
 ```log
 Method: POST | Url: http://185.177.105.151:1998/api/rooms/create
-Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/update
+Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_key/update
 Exmple Body:
     room_name:MyRoom
     room_type:1
@@ -324,7 +332,7 @@ Exmple Body:
 
 #### # To add a new or edit an existing message (if has access).
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/String.
 + **message_id** - Required/Number.
 
 FormData Fields:
@@ -338,8 +346,8 @@ FormData Fields:
 + **message_files[0]** - Required/Binary File
 + **message_deleted_files[0]** - No Required/MultipleNumber. ID of the files to be deleted.
 ```log
-Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/messages/send
-Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/messages/:message_id/update
+Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_key/messages/send
+Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_key/messages/:message_id/update
 Exmple Body:
     message_content:Hello Chat!
     message_type:1
@@ -355,11 +363,11 @@ Exmple Body:
 
 #### # To delete a room or room message (if has access).
 Parameters:
-+ **room_id** - Required/Number.
++ **room_key** - Required/Number.
 + **message_id** - Required/Number.
 ```log
-Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/delete
-Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_id/messages/:message_id/delete
+Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_key/delete
+Method: POST | Url: http://185.177.105.151:1998/api/rooms/:room_key/messages/:message_id/delete
 ```
 
 - - -
